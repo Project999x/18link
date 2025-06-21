@@ -19,7 +19,7 @@ from database.database import *
 async def add_admins(client: Client, message: Message):
     pro = await message.reply("<b><i>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..</i></b>", quote=True)
     check = 0
-    admin_ids = await db.get_all_admins()
+    admin_ids = await get_all_admins()
     admins = message.text.split()[1:]
 
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")]])
@@ -55,7 +55,7 @@ async def add_admins(client: Client, message: Message):
 
     if check == len(admins):
         for id in admins:
-            await db.add_admin(int(id))
+            await add_admin(int(id))
         await pro.edit(f"<b>✅ Admin(s) added successfully:</b>\n\n{admin_list}", reply_markup=reply_markup)
     else:
         await pro.edit(
@@ -68,7 +68,7 @@ async def add_admins(client: Client, message: Message):
 @Bot.on_message(filters.command('deladmin') & filters.private & filters.user(OWNER_ID))
 async def delete_admins(client: Client, message: Message):
     pro = await message.reply("<b><i>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..</i></b>", quote=True)
-    admin_ids = await db.get_all_admins()
+    admin_ids = await get_all_admins()
     admins = message.text.split()[1:]
 
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close")]])
@@ -85,7 +85,7 @@ async def delete_admins(client: Client, message: Message):
     if len(admins) == 1 and admins[0].lower() == "all":
         if admin_ids:
             for id in admin_ids:
-                await db.del_admin(id)
+                await del_admin(id)
             ids = "\n".join(f"<blockquote><code>{admin}</code> ✅</blockquote>" for admin in admin_ids)
             return await pro.edit(f"<b>⛔️ All admin IDs have been removed:</b>\n{ids}", reply_markup=reply_markup)
         else:
@@ -101,7 +101,7 @@ async def delete_admins(client: Client, message: Message):
                 continue
 
             if id in admin_ids:
-                await db.del_admin(id)
+                await del_admin(id)
                 passed += f"<blockquote><code>{id}</code> ✅ Removed</blockquote>\n"
             else:
                 passed += f"<blockquote><b>ID <code>{id}</code> not found in admin list.</b></blockquote>\n"
@@ -114,7 +114,7 @@ async def delete_admins(client: Client, message: Message):
 @Bot.on_message(filters.command('admins') &  & filters.private & filters.user(ADMINS))
 async def get_admins(client: Client, message: Message):
     pro = await message.reply("<b><i>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..</i></b>", quote=True)
-    admin_ids = await db.get_all_admins()
+    admin_ids = await get_all_admins()
 
     if not admin_ids:
         admin_list = "<b><blockquote>❌ No admins found.</blockquote></b>"
