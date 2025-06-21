@@ -39,12 +39,12 @@ START_PIC = os.environ.get("START_PIC", "https://envs.sh/rGy.jpg")
 FORCE_PIC = os.environ.get("FORCE_PIC", "https://envs.sh/rGX.jpg")
 
 #text
-HELP_TXT = "<blockquote><b>Hi Dude!\n\nTo use this bot you just have to join both channels that's it..\nWatch Tutorial to open Link - <a href=https://t.me/+ZLu08PF-JUIzMjFl>Clickhere</a></b></blockquote>"
-ABOUT_TXT = "<blockquote><b><i>About Us..\n\n‣ Made for : <a href=https://t.me/+sOF6oYv8MPVmOGQ1>ClickHere</a>\n‣ Owned by : @Whitebeard_Sama\n‣ Maintained by : @Whitebeard_Sama\n‣ Developed by : @Whitebeard_Sama\n\n Adios !!</i></b></blockquote>"
+HELP_TXT = "<blockquote><b>Hi Dude!\n\nTo use this bot you just have to join both channels that's it..\nWatch Tutorial to open Link - <a href=https://t.me/ChipsTutorial/7>Clickhere</a></b></blockquote>"
+ABOUT_TXT = "<blockquote><b><i>About Us..\n\n‣ Made for : <a href=https://t.me/+dQ1zox66EVRmM2Q1>ClickHere</a>\n‣ Owned by : @Sorryfucked\n‣ Maintained by : @Sorryfucked\n‣ Developed by : @metaui\n\n Ben 10 !!</i></b></blockquote>"
 SHORT_MSG = "<b>⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ..</b>"
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "<b>ʜɪ ᴛʜᴇʀᴇ... {first}! 💥\n\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ...!\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href=https://t.me/Shirohige_Animes>ᴀɴɪᴍᴇ ᴅʀɪғᴛ</a></b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>ʜɪ ᴛʜᴇʀᴇ... {first}! 💥\n\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ...!\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href=https://t.me/illegalCollege>War Updates</a></b>")
 try:
     ADMINS=[1418213560]
     for x in (os.environ.get("ADMINS", "7387793694 6076683960").split()):
@@ -65,8 +65,8 @@ PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" el
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 
 #Short Url or Api
-SHORT_URL = os.environ.get("SHORTNER_URL", "arolinks.com")
-SHORT_API = os.environ.get("SHORTNER_API", "6340be36ab1fcaee5ba8e937a3c4d7da46797875")
+SHORT_URL = os.environ.get("SHORTNER_URL", "inShortUrl.com")
+SHORT_API = os.environ.get("SHORTNER_API", "2e7e4739d495b5fce0531b9dc8342c40762a3fa9")
 
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = "Pʟᴇᴀꜱᴇ ᴅᴏɴ'ᴛ ᴍᴇꜱꜱᴀɢᴇ ᴍᴇ ᴅɪʀᴇᴄᴛʟʏ ɪ ᴀᴍ ᴏɴʟʏ ᴡᴏʀᴋ ꜰᴏʀ - @illegalCollege"
