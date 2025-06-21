@@ -29,14 +29,14 @@ DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://hamzann:hamza00@cluster0.
 DB_NAME = os.environ.get("DATABASE_NAME", "MobilePostBot")
 
 #force sub channel id, if you want enable force sub
-FORCESUB_CHANNEL = int(os.environ.get("FORCESUB_CHANNEL", "0"))
-FORCESUB_CHANNEL2 = int(os.environ.get("FORCESUB_CHANNEL2", "0"))
+FORCESUB_CHANNEL = int(os.environ.get("FORCESUB_CHANNEL", "-1002376494551"))
+FORCESUB_CHANNEL2 = int(os.environ.get("FORCESUB_CHANNEL2", "-1002212308792"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #pics
-START_PIC = os.environ.get("START_PIC", "https://envs.sh/rGy.jpg")
-FORCE_PIC = os.environ.get("FORCE_PIC", "https://envs.sh/rGX.jpg")
+START_PIC = os.environ.get("START_PIC", "https://graph.org/file/ae4c99b0d8374b1394a34-cd13cccd14b3795234.jpg")
+FORCE_PIC = os.environ.get("FORCE_PIC", "https://t.me/ohips/12")
 
 #text
 HELP_TXT = "<blockquote><b>Hi Dude!\n\nTo use this bot you just have to join both channels that's it..\nWatch Tutorial to open Link - <a href=https://t.me/ChipsTutorial/7>Clickhere</a></b></blockquote>"
