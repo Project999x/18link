@@ -293,3 +293,58 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
         msg = await message.reply(REPLY_ERROR)
         await asyncio.sleep(8)
         await msg.delete()
+
+
+
+
+#=====================================================================================##
+
+
+@Bot.on_message(filters.private & filters.command('pbroadcast') & admin)
+async def send_pin_text(client: Bot, message: Message):
+    if message.reply_to_message:
+        query = await full_userbase()
+        broadcast_msg = message.reply_to_message
+        total = 0
+        successful = 0
+        blocked = 0
+        deleted = 0
+        unsuccessful = 0
+
+        pls_wait = await message.reply("<i>ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴘʀᴏᴄᴇꜱꜱɪɴɢ....</i>")
+        for chat_id in query:
+            try:
+                # Send and pin the message
+                sent_msg = await broadcast_msg.copy(chat_id)
+                await client.pin_chat_message(chat_id=chat_id, message_id=sent_msg.id, both_sides=True)
+                successful += 1
+            except FloodWait as e:
+                await asyncio.sleep(e.x)
+                sent_msg = await broadcast_msg.copy(chat_id)
+                await client.pin_chat_message(chat_id=chat_id, message_id=sent_msg.id, both_sides=True)
+                successful += 1
+            except UserIsBlocked:
+                await db.del_user(chat_id)
+                blocked += 1
+            except InputUserDeactivated:
+                await db.del_user(chat_id)
+                deleted += 1
+            except Exception as e:
+                print(f"Failed to send or pin message to {chat_id}: {e}")
+                unsuccessful += 1
+            total += 1
+
+        status = f"""<b><u>ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ</u></b>
+
+Total Users: <code>{total}</code>
+Successful: <code>{successful}</code>
+Blocked Users: <code>{blocked}</code>
+Deleted Accounts: <code>{deleted}</code>
+Unsuccessful: <code>{unsuccessful}</code>"""
+
+        return await pls_wait.edit(status)
+
+    else:
+        msg = await message.reply("Reply to a message to broadcast and pin it.")
+        await asyncio.sleep(8)
+        await msg.delete()
