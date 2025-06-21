@@ -111,7 +111,7 @@ async def delete_admins(client: Client, message: Message):
         await pro.edit("<b><blockquote>No admin IDs available to delete.</blockquote></b>", reply_markup=reply_markup)
 
 
-@Bot.on_message(filters.command('admins') & filters.private (ADMINS))
+@Bot.on_message(filters.command('admins') &  & filters.private & filters.user(ADMINS))
 async def get_admins(client: Client, message: Message):
     pro = await message.reply("<b><i>ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ..</i></b>", quote=True)
     admin_ids = await db.get_all_admins()
