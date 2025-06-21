@@ -62,7 +62,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 first = query.from_user.mention, 
                 second = query.from_user.mention
             ),
-            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
