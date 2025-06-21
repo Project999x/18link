@@ -300,7 +300,7 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
 #=====================================================================================##
 
 
-@Bot.on_message(filters.private & filters.command('pbroadcast') & admin)
+@Bot.on_message(filters.private & filters.command('pbroadcast')  & filters.user(ADMINS))
 async def send_pin_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
