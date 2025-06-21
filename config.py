@@ -7,30 +7,30 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7955067262:AAGOHdWeHa6BLEBGL_xDfLXtBu9Jg47Be7U")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7220198898:AAFWjjzxv0zHdbO5ojgUXxV96xmYahD1c9o")
 
 #Your API ID from my.telegram.org
-APP_ID = int(os.environ.get("APP_ID", "19822764"))
+APP_ID = int(os.environ.get("APP_ID", "24371796"))
 
 #Your API Hash from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "b240e413364b8608a542a7cafc6903be")
+API_HASH = os.environ.get("API_HASH", "8121c78f4b8b31e88cc2623d1277338d")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001985214229"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002667555990"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "1418213560"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6752287005"))
 
 #Port
 PORT = os.environ.get("PORT", "8080")
 
 #Database 
-DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://sagatobots00001:sagatobots100@cluster00001.vgdshkw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster00001")
-DB_NAME = os.environ.get("DATABASE_NAME", "Fubuki_x_Robot_2_0_bot")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://hamzann:hamza00@cluster0.id2lo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_NAME = os.environ.get("DATABASE_NAME", "MobilePostBot")
 
 #force sub channel id, if you want enable force sub
-FORCESUB_CHANNEL = int(os.environ.get("FORCESUB_CHANNEL", "-1002265864308"))
-FORCESUB_CHANNEL2 = int(os.environ.get("FORCESUB_CHANNEL2", "-1002421625735"))
+FORCESUB_CHANNEL = int(os.environ.get("FORCESUB_CHANNEL", "0"))
+FORCESUB_CHANNEL2 = int(os.environ.get("FORCESUB_CHANNEL2", "0"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -47,7 +47,7 @@ SHORT_MSG = "<b>⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄ
 START_MSG = os.environ.get("START_MESSAGE", "<b>ʜɪ ᴛʜᴇʀᴇ... {first}! 💥\n\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ...!\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\n\nᴘᴏᴡᴇʀᴇᴅ ʙʏ : <a href=https://t.me/Shirohige_Animes>ᴀɴɪᴍᴇ ᴅʀɪғᴛ</a></b>")
 try:
     ADMINS=[1418213560]
-    for x in (os.environ.get("ADMINS", "6587003349 7827448605 8160777407").split()):
+    for x in (os.environ.get("ADMINS", "7387793694 6076683960").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
