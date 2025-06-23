@@ -12,6 +12,7 @@ database = dbclient[DB_NAME]
 # Database collections
 user_data = database['users']
 premium_user = database['premium']
+clicks = database['click']
 
 
 # User functions
@@ -66,6 +67,27 @@ async def remove_premium(user_id: int):
     premium_user.delete_one({'_id': user_id})
     return
 
+
+    #CLICKS FUNCTIONS 
+async def add_click(user_id: int, base64_string: str):
+    try:
+        clicks.update_one(
+            {'_id': user_id},
+            {'$addToSet': {'base64_strings': base64_string}},
+            upsert=True
+        )
+        return True
+    except Exception as e:
+        print(f"Failed to store base64 string: {e}")
+        return False
+
+async def total_click(base64_string: str):
+    try:
+        count = clicks.count_documents({'base64_strings': base64_string})
+        return count
+    except Exception as e:
+        print(f"Failed to get total users for base64 string: {e}")
+        return 0
 
     # ADMIN DATA
     async def admin_exist(self, admin_id: int):
