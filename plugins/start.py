@@ -174,7 +174,7 @@ async def short_url(client: Client, message: Message, base64_string):
         await message.reply_photo(
             photo=START_PIC,
             caption=SHORT_MSG.format(
-                total_count="N/A"
+                total_count=total_clicks
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
