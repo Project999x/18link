@@ -127,8 +127,7 @@ async def start_command(client: Client, message: Message):
     else:
         reply_markup = InlineKeyboardMarkup([
             [InlineKeyboardButton("ʜᴇʟᴘ", callback_data='help'),
-             InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')],
-            [InlineKeyboardButton("ᴡᴀᴛᴄʜ 𝟷𝟾+ sʜᴏʀᴛs ᴠɪᴅᴇᴏs", url='http://t.me/UnseenRobot/shorts')],
+             InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')],           
             [InlineKeyboardButton("ᴄʟᴏꜱᴇ", callback_data='close')]
         ])
         try:
@@ -354,3 +353,4 @@ Unsuccessful: <code>{unsuccessful}</code>"""
         msg = await message.reply("Reply to a message to broadcast and pin it.")
         await asyncio.sleep(8)
         await msg.delete()
+        
