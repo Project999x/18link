@@ -6,11 +6,14 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, OWNER_ID, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, START_PIC, FORCE_PIC, SHORT_MSG, AUTO_DEL, DEL_TIMER, DEL_MSG
+from config import ADMINS, FORCE_MSG, OWNER_ID, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, START_PIC, FORCE_PIC, AUTO_DEL, DEL_TIMER, DEL_MSG
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user, is_premium
 from plugins.shorturl import get_short
 from plugins.autodel import convert_time
+
+SHORT_MSG = "<b><blockquote>ᴛᴏᴛᴀʟ ᴄʟɪᴄᴋs :- {total_count}</blockquote>\n⌯ ʏᴏᴜʀ ʟɪɴᴋ ɪꜱ ʀᴇᴀᴅʏ, ᴋɪɴᴅʟʏ ᴄʟɪᴄᴋ ᴏɴ ᴏᴘᴇɴ ʟɪɴᴋ ʙᴜᴛᴛᴏɴ..</b>"
+
 
 async def delete_message(msg, delay_time):
     if AUTO_DEL.lower() == "true": 
@@ -155,6 +158,7 @@ async def short_url(client: Client, message: Message, base64_string):
     try:
         prem_link = f"https://t.me/{client.username}?start=yu3elk{base64_string}7"
         short_link = get_short(prem_link)
+        total_clicks = await total_click(base64_string)
 
         buttons = [
             [
