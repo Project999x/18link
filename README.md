@@ -1,4 +1,4 @@
-# File Sharing Ultra Modified Version With Shortener By Hunters
+# File Sharing Ultra Modified Version With Shortener By @WhiteBeard_Sama
 
 ![image](https://github.com/Sahil0976/Multi-ForceSub_3buttons/assets/97865856/f590a80a-f80c-40bb-b583-a6e114122f3d)
 
